@@ -40,7 +40,7 @@ $(document).ready(function(){
             if(atpos < 1 || ( dotpos - atpos < 2 )){//check email
                 $("#email").focus();
             }else{
-                $.post("http://localhost:3000/login",{email:email,pass:pass},function(data){                
+                $.post("/login",{email:email,pass:pass},function(data){                
                     if(data==='done'){
                         window.location.href="/home";
                     }else{
@@ -64,7 +64,7 @@ $(document).ready(function(){
             if(atpos < 1 || ( dotpos - atpos < 2 )){//check email
                 $("#email").focus();
             }else{
-                $.post("http://localhost:3000/create",{email:email,pass:pass},function(data){                
+                $.post("/create",{email:email,pass:pass},function(data){                
                     if(data==='done'){
                         window.location.href="/";
                     }

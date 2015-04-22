@@ -71,7 +71,7 @@ $("#submit").click(function() {
     if (title.val()=="" || comment.val()==""){
         title.focus();
     }else{
-        $.post("http://localhost:3000/home",{title:title.val(),comment:comment.val()},function(data){
+        $.post("/home",{title:title.val(),comment:comment.val()},function(data){
             if(data==='done'){
                 window.location.href="/home";
             }
