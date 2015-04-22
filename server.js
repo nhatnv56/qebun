@@ -73,18 +73,23 @@ app.get('/home',function(req,res){
     sess=req.session;
     if(sess.email){
         User.findOne({email: req.session.email}).populate('comment').exec(function(err,doc) {
-            if(err) console.error(err)
+            if(err) {
+                console.error(err);
+                res.send("err get/home");
+                return;
+            }
             else
+            {
                 res.render('home',{email: sess.email, div: doc.comment});
+            }
         });
     }else{
         res.redirect('/');
     }
 });
 
+
 app.post('/home', function(req, res) {
-    console.log(req.body);
-    console.log(req.session);
     
     User.findOne({
         email: req.session.email
@@ -96,14 +101,17 @@ app.post('/home', function(req, res) {
         },function(err,comment) {
             user.comment.push(comment._id);
             user.save(function(err) {
-                if(err) console.error(err)
-                else{
-                    console.log('success');
+                if(err)  {
+                    console.error(err)
+                    res.send("err");
+                    return;
+                }else{
+                    res.json(comment);
                 }
             });
         });
     });
-    res.redirect('/home');
+    console.log('post home');
 });
 
 app.get('/logout',function(req,res){
