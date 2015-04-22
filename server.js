@@ -14,7 +14,7 @@ app.use(session({secret: 'ssshhhhh'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname+'/public'));
-var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/HelloMongoose';
+var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://<xedap100>:<perona100>@ds041851.mongolab.com:41851/demo';
 //mongoose.connect('mongodb://localhost/test');
 mongoose.connect(uristring,function(err,res) {
     if (err) {
