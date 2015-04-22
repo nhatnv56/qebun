@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var app = express();
 var Schema = mongoose.Schema;
 
-app.set('port', (process.env.PORT || 3000));
+var port = Number(process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.engine('.html',require('ejs').__express);
 app.set('view engine','html');
@@ -127,6 +127,6 @@ app.post('/create',function (req,res) {
 //app.listen(3000,function(){
 //    console.log("App Started on PORT 3000");
 //});
-app.listen(app.get('port'), function() {
+app.listen(port, function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
