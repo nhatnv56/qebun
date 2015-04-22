@@ -127,6 +127,4 @@ app.post('/create',function (req,res) {
 //app.listen(3000,function(){
 //    console.log("App Started on PORT 3000");
 //});
-app.listen(port, function() {
-  console.log("Node app is running at localhost:" + app.get('port'));
-});
+app.listen(port);
