@@ -1,8 +1,9 @@
-//var express = require('express');
+var express = require('express');
+var app = express();
+
 //var session = require('express-session');
 //var bodyParser = require('body-parser');
 //var mongoose = require('mongoose');
-//var app = express();
 //var Schema = mongoose.Schema;
 //
 //app.set('views', __dirname + '/views');
