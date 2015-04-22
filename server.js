@@ -111,7 +111,6 @@ app.post('/home', function(req, res) {
             });
         });
     });
-    console.log('post home');
 });
 
 app.get('/logout',function(req,res){

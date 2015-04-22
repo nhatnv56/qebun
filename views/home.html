@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= email %></title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -63,8 +64,10 @@
         <p class="navbar-text pull-left">Site Build by Qebun</p>
     </div>
 </footer>
-<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery-1.11.2.js"></script> -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<!-- <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $("#submit").click(function(e) {
     var title = $("#title");
@@ -80,8 +83,8 @@ $("#submit").click(function(e) {
                                 + '</div>');
                 $('.list-comment').prepend(comment);
             }
+            comment.val = '';
             title.val('');
-            comment.val('');
         });
     };
     e.stopPropagation();
