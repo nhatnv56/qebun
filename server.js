@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.engine('.html',require('ejs').__express);
 app.set('view engine','html');
@@ -124,7 +125,6 @@ app.post('/create',function (req,res) {
     });
 });
 
-app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
