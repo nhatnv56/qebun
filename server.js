@@ -1,16 +1,11 @@
 var express = require('express');
-var app = express();
-
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var app = express();
 var Schema = mongoose.Schema;
 
-app.set('port', (process.env.PORT || 5000));
-var uristring = process.env.MONGOLAB_URI 
-    || process.env.MONGOHQ_URL
-    || 'mongodb://localhost/HelloMongoose';
-
+app.set('port', (process.env.PORT || 3000));
 app.set('views', __dirname + '/views');
 app.engine('.html',require('ejs').__express);
 app.set('view engine','html');
@@ -19,13 +14,14 @@ app.use(session({secret: 'ssshhhhh'}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname+'/public'));
+var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/HelloMongoose';
 //mongoose.connect('mongodb://localhost/test');
-mongoose.connect(uristring, function (err, res) {
-  if (err) {
-  console.log ('ERROR connecting to: ' + uristring + '. ' + err);
-  } else {
-  console.log ('Succeeded connected to: ' + uristring);
-  }
+mongoose.connect(uristring,function(err,res) {
+    if (err) {
+        console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+    } else {
+        console.log ('Succeeded connected to: ' + uristring);
+    }
 });
 
 var UserSchema = new Schema({
