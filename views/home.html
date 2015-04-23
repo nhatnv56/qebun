@@ -108,7 +108,7 @@
         </form>
         <div class="list-comment">
             <% for(var i=div.length-1; i>=0; i--){ %>
-                <div class="page-header col-md-10 col-md-offset-1 panel panel-default">
+                <div class="page-header col-md-10 col-md-offset-1 panel-default">
                     <a href="#"><h1 class="panel-heading" ><%= div[i].title %></h1></a>
                     <p class="lead panel-body"><%= div[i].body %></p>
                 </div>
@@ -133,7 +133,7 @@ $("#submit").click(function(e) {
     }else{
         $.post("/home",{title: title.val(), comment: comment.val()},function(data){
             if(typeof data==='object'){
-                var comment = $('<div class="page-header col-md-10 col-md-offset-1 panel panel-default">'
+                var comment = $('<div class="page-header col-md-10 col-md-offset-1 panel-default">'
                                 + '<a href="#"><h1 class="panel-heading" >' + data.title + '</h1></a>'
                                 + '<p class="lead panel-body">' + data.body + '</p>'
                                 + '</div>');
