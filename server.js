@@ -69,7 +69,7 @@ app.post('/login',function(req,res){
     });
 });
 
-app.get('/home',function(req,res){
+app.get('/home*',function(req,res){
     sess=req.session;
     if(sess.email){
         User.findOne({email: req.session.email}).populate('comment').exec(function(err,doc) {
