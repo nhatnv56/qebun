@@ -5,8 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= email %></title>
-    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+        *:focus{
+            outline: none !important;
+        }
+        h1{
+            word-wrap: break-word;
+        }
+        p{
+            word-wrap: break-word;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -24,9 +34,9 @@
                 <li class="dropdown">
                     <a href="/" class="dropdown-toggle" data-toggle="dropdown">Social <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/">Twitter</a></li>
-                        <li><a href="/">Facebook</a></li>
-                        <li><a href="/">Google+</a></li>
+                        <li><a href="https://twitter.com/xedap100">Twitter</a></li>
+                        <li><a href="https://facebook.com/uettrafalgarlaw">Facebook</a></li>
+                        <li><a href="https://plus.google.com/u/0/102473218970648668378">Google+</a></li>
                     </ul>
                 </li>
                 <li><a href="/">About</a></li>
@@ -43,7 +53,7 @@
                 <input type="text" class="form-control"  placeholder="Title your post" id="title" required>
             </div>
             <div class="form-group">
-                <label for="comment">Comment:</label>
+                <label for="comment">Content:</label>
                 <textarea class="form-control" rows="5" id="comment"></textarea>
             </div>
             <button type="submit" class="btn btn-default label-info" id="submit">Submit</button>
@@ -61,12 +71,10 @@
 
 <footer>
     <div class="container-fluid">
-        <p class="navbar-text pull-left">Site Build by Qebun</p>
+        <p class="navbar-text pull-left">Site Build by <a href="http://facebook.com/uettrafalgarlaw">Qebun</a></p>
     </div>
 </footer>
-<!-- <script type="text/javascript" src="js/jquery-1.11.2.js"></script> -->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<!-- <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script> -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 $("#submit").click(function(e) {
